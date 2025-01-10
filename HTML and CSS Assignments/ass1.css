@@ -1,0 +1,127 @@
+body{
+    background-color: #131010;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* for mobile */
+
+[class*="col-"] {
+    width:100%;
+}
+
+/* for desktop */
+@media only screen and (min-width:768px){
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    }
+    
+/* for tablets */
+@media only screen and (min-width:600px){
+.col-t-1 {width: 8.33%;}
+.col-t-2 {width: 16.66%;}
+.col-t-3 {width: 25%;}
+.col-t-4 {width: 33.33%;}
+.col-t-5 {width: 41.66%;}
+.col-t-6 {width: 50%;}
+.col-t-7 {width: 58.33%;}
+.col-t-8 {width: 66.66%;}
+.col-t-9 {width: 75%;}
+.col-t-10 {width: 83.33%;}
+.col-t-11 {width: 91.66%;}
+.col-t-12 {width: 100%;}
+}
+
+/* responsive navbar  */
+
+@media screen and (max-width: 600px) {
+    .navbar a{
+        width: 100%;
+    }
+}
+
+.header{
+    text-align: center;
+    font-size: x-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 2px 2px 5px orange;
+    position: fixed;
+    background-color: darkgray;
+}
+
+.section{
+    padding: 5px;
+}
+
+img{
+    padding: 7px;
+    border-radius: 40px 10px 40px 10px;
+}
+
+img:hover{
+    box-shadow: 0px 0px 10px aliceblue;
+    border-radius: 10px;
+    border: 2px solid white;
+    
+}
+
+.head{
+    margin: 10px;
+    text-align: left;
+    /* position: fixed; */
+}
+
+.head a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.head:hover{
+    text-shadow: 2px 2px 4px red;
+    
+}
+
+.list{
+    
+    text-align: left;
+    margin: 10px;
+    /* position: fixed; */
+    
+}
+
+.list a:first-child{
+    color: orangered;
+}
+
+.list a{
+    text-decoration: none;
+      color: aliceblue;
+      
+}
+
+a:hover{
+    text-shadow: 2px 2px 4px red;
+   
+}
+
+svg:hover{
+    color: blue;
+    box-shadow: 0px 0px 10px black;
+}
+
