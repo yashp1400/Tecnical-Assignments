@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .slider-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .slides {
+            display: flex;
+            width: 300%;
+            transition: transform 1s ease-in-out; /* Slower transition */
+        }
+        .slide {
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .btn {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Image Slider</h2>
+    <div class="slider-container">
+        <div class="slides">
+            <div class="slide"><img src="vk1.jpeg" alt="Slide 1"></div>
+            <div class="slide"><img src="vk2.jpeg" alt="Slide 2"></div>
+            <div class="slide"><img src="vk3.jpeg" alt="Slide 3"></div>
+        </div>
+        <div class="buttons">
+            <button class="btn" onclick="prevSlide()">❮</button>
+            <button class="btn" onclick="nextSlide()">❯</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelector(".slides");
+        const totalSlides = document.querySelectorAll(".slide").length;
+
+        function showSlide(index) {
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        setInterval(nextSlide); // Slower auto-slide (5 seconds)
+    </script>
+
+</body>
+</html>

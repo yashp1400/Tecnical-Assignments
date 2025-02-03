@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            font-family: monospace;
+            font-size: large;
+        }
+        *{
+            box-sizing: border-box;
+        }
+
+        .col-6{width: 50%;}
+        .res{
+            justify-items: center;
+            }
+        button{
+            border-radius: 10px 10px 10px 10px;           
+            font-size: large;
+        }
+        
+      input{
+        width: 400px;
+        padding: 5px;
+        border-radius: 6px 6px 6px 6px;
+      }
+      
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="res col-6">
+        <h1>Marks</h1><br>
+        <form onsubmit="return result()">
+        C Language : <br>
+        <input type="number" id="clanguage" placeholder="Enter C language Marks" name="english" required min="0" max="100"/><br><br>
+        C++ Language : <br>
+        <input type="number" id="cclanguage" placeholder="Enter C++ Language Marks"  name="hindi" required min="0" max="100"/><br><br>
+        Database : <br>
+        <input type="number" id="database" placeholder="Enter Database Marks" name="gujarati" required min="0" max="100"/><br><br>
+        HTML : <br>
+        <input type="number" id="html" placeholder="Enter HTML Marks" name="english" required min="0" max="100"/><br><br>
+        PHP : <br>
+        <input type="number" id="php" placeholder="Enter PHP Marks"  name="hindi" required min="0" max="100"/><br><br>
+        CSS : <br>
+        <input type="number" id="css" placeholder="Enter CSS Marks" name="gujarati" required min="0" max="100"/><br><br>
+        Java : <br>
+        <input type="number" id="java" placeholder="Enter Java Marks" name="gujarati" required min="0" max="100"/><br><br>
+        <button>SUBMIT</button>
+        </form>
+        <br>
+    <br>
+    <h3 id="total"></h3>
+    <h3 id="per"></h3>
+    <h3 id="grade"></h3>
+    </div>
+    
+   
+    <script>
+        function result()
+        {
+            var clanguage=document.getElementById('clanguage').value;
+            var cclanguage=document.getElementById('cclanguage').value;
+            var database=document.getElementById('database').value;
+            var html=document.getElementById('html').value;
+            var php=document.getElementById('php').value;
+            var css=document.getElementById('css').value;
+            var java=document.getElementById('java').value;
+
+
+            var total=+clanguage + +cclanguage + +database + +html + +php + +css + +java;
+
+            document.getElementById('total').innerText="Total is :" + total;
+
+            var per=(total*100)/700;
+            document.getElementById('per').innerText="Per is :" + per + "%";
+
+            if(per>90){
+                document.getElementById('grade').innerText="Grade is : A";
+                document.getElementById('grade').style.color="green";
+            }
+            else if(per>70){
+                document.getElementById('grade').innerText="Grade is : B";
+                document.getElementById('grade').style.color="green";
+            }
+
+            else if(per>50){
+                document.getElementById('grade').innerText="Grade is : C";
+                document.getElementById('grade').style.color="green";
+            }
+
+            else{
+                document.getElementById('grade').innerText="You are Fail";
+                document.getElementById('grade').style.color="red";
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
