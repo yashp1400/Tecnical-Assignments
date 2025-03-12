@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide Password</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 320px;
+        }
+        .input-container {
+            position: relative;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            padding-right: 40px;
+            border: 2px solid #ff758c;
+            border-radius: 6px;
+            font-size: 16px;
+            outline: none;
+        }
+        .toggle-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 16px;
+            color: #ff758c;
+            transition: 0.3s;
+        }
+        .toggle-btn:hover {
+            color: #ff5277;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Show and Hide Password</h2>
+        <div class="input-container">
+            <input type="password" id="password" placeholder="Enter Password">
+            <span class="toggle-btn">👁️</span>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $(".toggle-btn").click(function(){
+                let inputField = $("#password");
+                let type = inputField.attr("type") === "password" ? "text" : "password";
+                inputField.attr("type", type);
+                $(this).text(type === "password" ? "👁️" : "🙈");
+            });
+        });
+    </script>
+
+</body>
+</html>
